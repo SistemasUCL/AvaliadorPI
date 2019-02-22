@@ -1,0 +1,65 @@
+<div class="m-content">
+  <div class="m-portlet m-portlet--full-height">
+    <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+      (action)="save()">
+      <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+          <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">
+              Professor
+            </h3>
+          </div>
+        </div>
+        <div class="m-portlet__head-tools">
+          <app-portlet-toolbar [buttons]="toolbarButtons"></app-portlet-toolbar>
+        </div>
+      </div>
+
+      <div class="m-portlet__body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="id">Id</label>
+              <input type="text" class="form-control m-input" id="id" disabled [(ngModel)]="model.id" name="id">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="matricula">Matrícula</label>
+              <input type="text" name="matricula" class="form-control m-input" id="matricula" placeholder="Matrícula" [(ngModel)]="model.matricula"
+                required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="usuario">Usuário
+                <button type="button" class="btn btn-sm btn-success m-btn btn-lable" (click)="showModal()">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </label>
+              <ng-select name="usuario" [(ngModel)]="model.usuarioId" (change)="selectUsuario($event)" required placeholder="Usuário">
+                <ng-option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nome + ' ' + usuario.sobreNome}}</ng-option>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" class="form-control m-input" id="email" placeholder="E-mail" [(ngModel)]="usuario.email"
+                required disabled>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="telefone">Telefone</label>
+              <input type="telefone" name="telefone" class="form-control m-input" id="telefone" placeholder="(99)99999-9999" [(ngModel)]="usuario.telefone"
+                required disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

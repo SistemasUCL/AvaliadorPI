@@ -1,0 +1,95 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+.m-subheader {
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+}
+
+.m-body .m-content {
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Table de detalhes nos Widgets
+ */
+
+.table-widget {
+  font-size: 1rem;
+}
+
+.table-widget tr th {
+  color: #666666;
+  padding: 2px 0px 2px 0px;
+  border-top: none;
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
+  border-bottom-width: 1px;
+}
+
+.table-widget tr td {
+  padding: 2px 0px 2px 0px;
+  border-top: none;
+  border-bottom-style: dashed;
+  border-bottom-color: rgb(235, 237, 242);
+  border-bottom-width: 0.07rem;
+}
+
+.table-widget tr td a.btn {
+  height: 18px !important;
+  width: 18px !important;
+  font-size: 7px;
+  margin-left: 4px !important;
+  margin-bottom: 2px;
+}
+
+.table-widget tr th.table-widget-action,
+.table-widget tr td.table-widget-action {
+  width: 22px;
+  border-bottom: none;
+}
+
+/**
+ * FIM: Table de detalhes nos Widgets
+ */
+
+.m-portlet {
+  margin-bottom: 1.1rem;
+  box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.15) !important;
+}
+
+.m-portlet__head {
+  padding-right: 15px !important;
+}
+
+.m-badge--full-width {
+  width: 100%
+}
+
+.m-nav__link {
+  cursor: pointer;
+}
+
+.m-dropdown__body {
+  padding: 10px !important;
+}
+
+.menu-acoes {
+  width: 300px !important;
+}
+
+.menu-acoes .m-nav__link-icon {
+  font-size: 14px !important;
+}
+
+.m-nav__link {
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}

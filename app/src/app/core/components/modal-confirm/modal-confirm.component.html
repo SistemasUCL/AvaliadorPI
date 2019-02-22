@@ -1,0 +1,23 @@
+<div *ngIf="active">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      {{params && params.title ? params.title : 'Corfirmação'}}
+    </h4>
+    <button type="button" class="close pull-right" (click)="hideModal()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{!params ? '' : params.text}}</p>
+  </div>
+  <div class="modal-footer">
+    <div class="text-right">
+      <button type="button" class="btn btn-success" (click)="onConfirm()">
+        <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Ok
+      </button>
+      <button type="button" class="btn btn-default m-btn" (click)="onCancel()">
+        <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+      </button>
+    </div>
+  </div>
+</div>

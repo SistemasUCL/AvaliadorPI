@@ -1,0 +1,31 @@
+<div class="cont_principal">
+
+  <div class="cont_modal">
+    <div class="cont_contenido" *ngIf="criteriosReady">
+
+      <app-card [avaliacao]="model" [index]="criterioIndex" (setRating)="rating($event)"></app-card>
+    </div>
+    <div class="cont_menu_bottom">
+      <div class="cont_menu_list">
+        <ul>
+          <li (click)="informarFalta()" class="col-3">
+            <i class="material-icons">account_circle</i>
+            <p>Falta</p>
+          </li>
+          <li (click)="previous()" class="col-3" [ngClass]="{'disabled': disabledPrevius}">
+            <i class="material-icons">navigate_before</i>
+            <p>Anterior</p>
+          </li>
+          <li class="col-3" [ngClass]="{'disabled': disabledConcluir}" (click)="concluir()">
+            <i class="material-icons">check_circle_outline</i>
+            <p>Concluir</p>
+          </li>
+          <li (click)="next()" class="col-3" [ngClass]="{'disabled': disabledNext}">
+            <i class="material-icons">navigate_next</i>
+            <p>Próximo</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

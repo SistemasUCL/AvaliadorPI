@@ -1,0 +1,106 @@
+<div class="m-portlet__body" *ngIf="gridModel && gridModel.gridColumns">
+  <fieldset [disabled]="!gridModel.searchUrl || disabled">
+    <div class="row">
+      <div class="col-md-6" *ngIf="gridModel.toolbarButtons">
+        <app-toolbar [buttons]="gridModel.toolbarButtons"></app-toolbar>
+      </div>
+      <div class="col-md-3" [class.offset-md-6]="!gridModel.toolbarButtons">
+        <div class="dataTables_paginate paging_full_numbers">
+          <ul class="pagination">
+            <li class="paginate_button page-item first" [class.disabled]="page <=1">
+              <a aria-controls="m_table_1" class="page-link" (click)="setPage(1)">
+                <i class="la la-angle-double-left"></i>
+              </a>
+            </li>
+            <li class="paginate_button page-item previous" [class.disabled]="page <=1">
+              <a aria-controls="m_table_1" class="page-link" (click)="setPage(page - 1)">
+                <i class="la la-angle-left"></i>
+              </a>
+            </li>
+            <li class="page-item p-r-2">
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <input id="navigate-value" type="number" class="form-control" disabled="{{!rows || rows.length == 0}}" [(ngModel)]="page"
+                    min="1" (keydown.Enter)="setPage(page)">
+                </div>
+                <div class="col-auto">
+                  de {{totalPages}}</div>
+              </div>
+            </li>
+            <li class="paginate_button page-item next" [class.disabled]="page >= totalPages">
+              <a class="page-link" (click)="setPage(page + 1)">
+                <i class="la la-angle-right"></i>
+              </a>
+            </li>
+            <li class="paginate_button page-item last" [class.disabled]="page >= totalPages">
+              <a class="page-link" (click)="setPage(page + 1)">
+                <i class="la la-angle-double-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <input class="form-control" placeholder="Digite sua pesquisa" type="text" [(ngModel)]="searchTerm" (keydown.Enter)="search()"
+          />
+          <button (click)="search()">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row scroll-grid">
+      <table class="table m-table mt-2 table-striped">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center; width: 35px" class="p-l-0 p-r-0">#</th>
+            <th scope="col" *ngFor="let gridColumn of gridModel.gridColumns" (click)="order(gridColumn.field)" [style.max-width]="gridColumn.width + 'px'">{{gridColumn.display}}
+              <i class="fa fa-chevron-circle-up" [ngClass]="{'fa-chevron-circle-down': orderBy === gridColumn.field && direction == 1, 'icon-transparent': orderBy != gridColumn.field}"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows" style="cursor: pointer;">
+            <td (click)="rowSelected(row)" style="text-align: center; max-width: 30px" class="p-l-0 p-r-0">
+              <input type="checkbox" [ngModel]="row.selected" />
+            </td>
+            <td *ngFor="let gridColumn of gridModel.gridColumns" (click)="rowSelected(row)" [style.max-width]="gridColumn.width + 'px'">
+              <a (click)="clickContent(row.id)">
+                {{gridColumn.type && gridColumn.type === 'data' ? (row[gridColumn.field] | date:'dd/MM/yyyy') : row[gridColumn.field] }}</a>
+            </td>
+          </tr>
+
+          <tr *ngIf="!rows || !rows.length">
+            <td [colSpan]="gridModel.gridColumns.length + 1" class="text-center">
+              <span>Nenhum registro encontrado</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        {{textoTotal}}
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="dataTables_paginate paging_simple_numbers">
+          <ul class="pagination float-right">
+            <li class="paginate_button page-item active" [class.active]="pageSize == 10">
+              <a class="page-link" (click)="setPageSize(10)">10</a>
+            </li>
+            <li class="paginate_button page-item" [class.active]="pageSize == 25">
+              <a class="page-link" (click)="setPageSize(25)">25</a>
+            </li>
+            <li class="paginate_button page-item" [class.active]="pageSize == 50">
+              <a class="page-link" (click)="setPageSize(50)">50</a>
+            </li>
+            <li class="paginate_button page-item" [class.active]="pageSize == 100">
+              <a class="page-link" (click)="setPageSize(100)">100</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

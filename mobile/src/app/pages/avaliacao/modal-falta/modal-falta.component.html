@@ -1,0 +1,32 @@
+<div *ngIf="active">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      Alunos Ausentes
+    </h4>
+    <button type="button" class="close pull-right" (click)="hideModal()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group m-form__group">
+          <label for="alunos">Alunos</label>
+          <ng-select name="alunos" [(ngModel)]="params.ausentes" [multiple]="true" placeholder="Alunos">
+            <ng-option *ngFor="let aluno of params.alunos" [value]="aluno.id">{{aluno.nome + ' ' + aluno.sobreNome}}</ng-option>
+          </ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="text-right">
+        <button type="submit" class="btn btn-success" (click)="onConfirm()">
+          <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Salvar
+        </button>
+        <button type="button" class="btn btn-default m-btn" (click)="onCancel()">
+          <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

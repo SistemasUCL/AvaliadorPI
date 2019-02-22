@@ -1,0 +1,26 @@
+<button class="m-aside-left-close m-aside-left-close--skin-dark" id="m_aside_left_close_btn">
+  <i class="la la-close"></i>
+</button>
+
+<div id="m_aside_left" class="m-grid__item m-aside-left  m-aside-left--skin-dark">
+  <div id="m_ver_menu" class="m-aside-menu m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark" data-menu-vertical="true"
+    data-menu-dropdown="true" data-menu-scrollable="true" data-menu-dropdown-timeout="500">
+    <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
+      <ng-container *ngFor="let grupo of rotas">
+        <li class="m-menu__section" *ngIf="grupo.title">
+          <h4 class="m-menu__section-text">{{grupo.title}}</h4>
+          <i class="m-menu__section-icon flaticon-more-v3"></i>
+        </li>
+        <li [ngClass]="{'m-menu__item--active' : rota.path === pageRouteBase}" class="m-menu__item" *ngFor="let rota of grupo.itens">
+          <a class="m-menu__link" [routerLink]="[rota.path]">
+            <span class="m-menu__item-here"></span>
+            <i class="m-menu__link-icon" [ngClass]="rota.icon"></i>
+            <span class="m-menu__link-text">
+              {{rota.title}}
+            </span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<a *ngFor="let item of starList; let i=index" (click)="setStar(i + 1)" [ngStyle]="{'color': item ? '#ff5722' : 'lightgray'}">
+  <mat-icon>star</mat-icon>
+</a>

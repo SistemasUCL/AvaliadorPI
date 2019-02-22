@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    AvaliadorPI
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+
+  <script src="https://cdn.auth0.com/js/auth0/9.0.1/auth0.min.js"></script>
+
+  <!--begin::Web font -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      }
+    });
+
+  </script>
+  <link rel="stylesheet" type="text/css" href="assets/vendors/flaticon/css/flaticon.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendors/line-awesome/css/line-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendors/metronic/css/styles.css">
+  <!--end::Web font -->
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+
+</head>
+<!-- begin::Body -->
+
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark
+m-aside-left--offcanvas m-footer--fixed m-footer--push m-aside--offcanvas-default">
+  <!-- begin:: Page -->
+
+  <app-root>
+    <style>
+      body {
+        background: #2c2e3e;
+      }
+
+      .preloader-1 {
+        margin: 100px auto 0;
+        width: 66px;
+        height: 12px;
+      }
+
+      .preloader-2 {
+        margin: 120px auto 0;
+      }
+
+      div {
+        color: #fff;
+        margin: 5px 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .preloader-1 .line {
+        width: 1px;
+        height: 12px;
+        background: #fff;
+        margin: 0 1px;
+        display: inline-block;
+        animation: opacity-1 1000ms infinite ease-in-out;
+      }
+
+      .preloader-2 .line {
+        width: 1px;
+        height: 12px;
+        background: #fff;
+        margin: 0 1px;
+        display: inline-block;
+        animation: opacity-2 1000ms infinite ease-in-out;
+      }
+
+      .preloader-1 .line-1,
+      .preloader-2 .line-1 {
+        animation-delay: 800ms;
+      }
+
+      .preloader-1 .line-2,
+      .preloader-2 .line-2 {
+        animation-delay: 600ms;
+      }
+
+      .preloader-1 .line-3,
+      .preloader-2 .line-3 {
+        animation-delay: 400ms;
+      }
+
+      .preloader-1 .line-4,
+      .preloader-2 .line-4 {
+        animation-delay: 200ms;
+      }
+
+      .preloader-1 .line-6,
+      .preloader-2 .line-6 {
+        animation-delay: 200ms;
+      }
+
+      .preloader-1 .line-7,
+      .preloader-2 .line-7 {
+        animation-delay: 400ms;
+      }
+
+      .preloader-1 .line-8,
+      .preloader-2 .line-8 {
+        animation-delay: 600ms;
+      }
+
+      .preloader-1 .line-9,
+      .preloader-2 .line-9 {
+        animation-delay: 800ms;
+      }
+
+      @keyframes opacity-1 {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes opacity-2 {
+        0% {
+          opacity: 1;
+          height: 15px;
+        }
+        50% {
+          opacity: 0;
+          height: 12px;
+        }
+        100% {
+          opacity: 1;
+          height: 15px;
+        }
+      }
+    </style>
+
+    <div class="preloader-2">
+      <div>Carregando...</div>
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+      <span class="line line-4"></span>
+      <span class="line line-5"></span>
+      <span class="line line-6"></span>
+      <span class="line line-7"></span>
+      <span class="line line-8"></span>
+      <span class="line line-9"></span>
+    </div>
+  </app-root>
+  <!-- end:: Page -->
+</body>
+<!-- end::Body -->
+
+</html>

@@ -1,0 +1,17 @@
+<ul class="m-portlet__nav">
+  <ng-container *ngFor="let button of buttons">
+    <li class="m-portlet__nav-item" [hidden]="button.hidden">
+      <button type="submit" [class.disabled]="button.disabled" class="m-portlet__nav-link btn btn-light m-btn m-btn--pill m-btn--air"
+        *ngIf="button.submit; else buttonClick">
+        <i [class]="button.icon"></i> {{button.display}}</button>
+
+      <ng-template #buttonClick>
+        <a class="m-portlet__nav-link btn btn-light m-btn m-btn--pill m-btn--air" [ngClass]="{'link-disabled': button.disabled}"
+          (click)="onClick(button)">
+          <i [ngClass]="button.icon"></i> {{button.display}}
+        </a>
+      </ng-template>
+
+    </li>
+  </ng-container>
+</ul>

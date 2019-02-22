@@ -1,0 +1,79 @@
+<div *ngIf="active">
+  <form
+    class="m-form m-form--fit m-form--label-align-right"
+    id="form"
+    novalidate
+    #form="ngForm"
+    [appFormValidation]="this.form"
+    (action)="onConfirm()"
+  >
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Avaliação</h4>
+      <button
+        type="button"
+        class="close pull-right"
+        (click)="hideModal()"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="text-center">
+        <h4>{{ alunoAvaliacao.nomeGrupo }}</h4>
+      </div>
+      <div class="text-center">{{ alunoAvaliacao.tema }}</div>
+      <div class="text-center">{{ alunoAvaliacao.nomeProjeto }}</div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="nome">Avaliador</label>
+            <ng-select
+              name="usuario"
+              [(ngModel)]="model.avaliadorId"
+              required
+              placeholder="Avaliador"
+              [disabled]="model.id"
+            >
+              <ng-option
+                *ngFor="let avaliador of alunoAvaliacao.avaliadores"
+                [value]="avaliador.id"
+              >
+                {{ avaliador.nome }}
+              </ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+      <ng-container *ngIf="model.avaliacoesCriterios">
+        <div
+          class="row"
+          *ngFor="let avaliacao of model.avaliacoesCriterios; let i = index"
+        >
+          <div class="col-md-12">
+            <div class="text-center">
+              <h6 for="">{{ alunoAvaliacao.criterios[i].titulo }}</h6>
+            </div>
+            <div class="text-center">
+              <app-star-rating [avaliacao]="avaliacao"></app-star-rating>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+      <div class="text-right">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Salvar
+        </button>
+        <button
+          type="button"
+          class="btn btn-default m-btn"
+          (click)="onCancel()"
+        >
+          <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

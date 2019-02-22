@@ -1,0 +1,35 @@
+<div *ngIf="active">
+  <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+    (action)="onConfirm()">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">
+        Aluno
+      </h4>
+      <button type="button" class="close pull-right" (click)="hideModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col">
+          <div class="form-group m-form__group">
+            <label for="usuario">Aluno</label>
+            <ng-select name="aluno" [(ngModel)]="model" required placeholder="Aluno">
+              <ng-option *ngFor="let aluno of alunos" [value]="aluno.id">{{aluno.matricula + ' - ' + aluno.nome + ' ' + aluno.sobreNome}}</ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="text-right">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Salvar
+        </button>
+        <button type="button" class="btn btn-default m-btn" (click)="onCancel()">
+          <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

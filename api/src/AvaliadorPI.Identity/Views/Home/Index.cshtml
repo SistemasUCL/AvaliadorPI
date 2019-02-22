@@ -1,0 +1,42 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityUser
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="login-page">
+
+    <div class="page-header">
+        <h1>User</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+
+                    <form asp-route="Login">
+
+                        <div class="form-group">
+                            <label asp-for="UserName"></label>
+                            <input class="form-control" placeholder="Username" asp-for="UserName" disabled>
+                        </div>
+
+                        @*@foreach (var claim in Model.Claims)
+                        {
+                        <div class="form-group">
+                            @Html.DisplayFor(m => claim.Type)
+                            <span>:</span>
+                            @Html.DisplayFor(m => claim.Value)
+                        </div>
+                        }*@
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

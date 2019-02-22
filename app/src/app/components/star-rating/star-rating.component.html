@@ -1,0 +1,7 @@
+<a
+  *ngFor="let item of starList; let i = index"
+  (click)="setStar(i + 1)"
+  [ngStyle]="{ color: item ? '#ff5722' : 'lightgray' }"
+>
+  <i class="fa fa-star"></i>
+</a>

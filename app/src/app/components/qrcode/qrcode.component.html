@@ -1,0 +1,5 @@
+<a [href]="qrcodeUrl" target="_blank" *ngIf="qrdata">
+    <qrcode [qrdata]="qrdata" [size]="size" [level]="'H'"></qrcode>
+</a>
+
+<div class="qrcode-disabled" *ngIf="!qrdata" [ngStyle]="{'width': size + 'px', 'height': size + 'px'}"></div>

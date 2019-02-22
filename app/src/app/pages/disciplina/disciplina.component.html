@@ -1,0 +1,36 @@
+<div class="m-content">
+  <div class="m-portlet m-portlet--full-height">
+    <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+      (action)="save()">
+      <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+          <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">
+              Disciplinas
+            </h3>
+          </div>
+        </div>
+        <div class="m-portlet__head-tools">
+          <app-portlet-toolbar [buttons]="toolbarButtons"></app-portlet-toolbar>
+        </div>
+      </div>
+
+      <div class="m-portlet__body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group m-form__group">
+              <label for="id">Id</label>
+              <input type="text" class="form-control m-input" id="id" disabled [(ngModel)]="model.id" name="id">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="form-group m-form__group">
+              <label for="nome">Nome</label>
+              <input type="text" name="nome" class="form-control m-input" id="nome" placeholder="Nome" [(ngModel)]="model.nome" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

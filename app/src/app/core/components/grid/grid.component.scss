@@ -1,0 +1,42 @@
+.page-link {
+  border-width: 0;
+}
+
+#navigate-value {
+  width: 40px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #5867dd;
+  border-color: #5867dd;
+}
+
+th {
+  // border: 1px solid #cccccc !important;
+  cursor: pointer;
+}
+
+.icon-transparent {
+  color: transparent;
+}
+
+.scroll-grid {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

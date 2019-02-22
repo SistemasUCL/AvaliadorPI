@@ -1,0 +1,12 @@
+.container {
+  position: absolute;
+  height: 90%;
+  margin: 0;
+
+  div.center {
+    position: relative;
+    top: 50%;
+    margin-top: -56px;
+    text-align: center;
+  }
+}

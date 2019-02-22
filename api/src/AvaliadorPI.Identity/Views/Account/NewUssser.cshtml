@@ -1,0 +1,54 @@
+﻿@model AvaliadorPI.Identity.ViewModels.NewUserViewModel
+
+@{
+    ViewData["Title"] = "NewUssser";
+}
+
+<h2>NewUssser</h2>
+
+<h4>NewUserViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NewUssser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <input asp-for="UsuarioId" class="form-control" />
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Adminsitrador" /> @Html.DisplayNameFor(model => model.Adminsitrador)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Avaliador" /> @Html.DisplayNameFor(model => model.Avaliador)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusMessage" class="control-label"></label>
+                <input asp-for="StatusMessage" class="form-control" />
+                <span asp-validation-for="StatusMessage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

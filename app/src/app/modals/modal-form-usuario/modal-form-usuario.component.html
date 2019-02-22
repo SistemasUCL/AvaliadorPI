@@ -1,0 +1,62 @@
+<div *ngIf="active">
+  <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+    (action)="onConfirm()">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">
+        Usuário
+      </h4>
+      <button type="button" class="close pull-right" (click)="hideModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control m-input" id="id" disabled [(ngModel)]="model.id" name="id">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control m-input" id="nome" placeholder="Nome" [(ngModel)]="model.nome" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobreNome" class="form-control m-input" id="sobrenome" placeholder="Sobrenome" [(ngModel)]="model.sobreNome"
+              required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control m-input" id="email" placeholder="Email" [(ngModel)]="model.email" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="telefone">Telefone</label>
+            <input type="telefone" name="telefone" class="form-control m-input" id="telefone" placeholder="(99)99999-9999" [(ngModel)]="model.telefone">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="text-right">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Salvar
+        </button>
+        <button type="button" class="btn btn-default m-btn" (click)="onCancel()">
+          <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

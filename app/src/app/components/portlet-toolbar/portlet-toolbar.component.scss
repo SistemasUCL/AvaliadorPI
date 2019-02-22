@@ -1,0 +1,15 @@
+
+// a:not([href]):not([tabindex]){
+//     color: #007bff;
+//     text-decoration: none;
+//     background-color: transparent;
+//     -webkit-text-decoration-skip: objects;
+//     cursor: pointer;
+// }
+
+// a:not([href]):not([tabindex]).disabled {
+//     pointer-events: none;
+//     cursor: default;
+//     text-decoration: none;
+//     color: black;
+// }

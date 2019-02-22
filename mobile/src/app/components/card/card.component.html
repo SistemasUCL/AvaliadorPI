@@ -1,0 +1,42 @@
+<aside class="profile-card">
+  <header>
+    <h1>
+      {{avaliacao.nome}}
+    </h1>
+
+    <h2>
+      {{avaliacao.tema}}
+    </h2>
+
+    <h2>
+      {{avaliacao.projeto}}
+    </h2>
+
+
+  </header>
+
+  <div class="profile-bio">
+    <div class="jumbotron">
+      <p id="description">
+        {{avaliacao.criterios[index].titulo}}
+      </p>
+      <p>
+        <strong>Peso: </strong>{{avaliacao.criterios[index].peso}}</p>
+    </div>
+  </div>
+
+  <div class="profile-bio" *ngIf="avaliacao && avaliacao.avaliados">
+    <div id="container">
+      <ng-container *ngFor="let avaliado of avaliacao.avaliados">
+        <section class="container">
+          <div class="name">
+            <h5>{{avaliado.nome + ' ' + (avaliado.sobreNome || '')}}</h5>
+          </div>
+          <div class="rating">
+            <app-star-rating [avaliacao]="avaliacao.criterios[index].avaliacao[avaliado.id]" (setRating)="rating($event)"></app-star-rating>
+          </div>
+        </section>
+      </ng-container>
+    </div>
+  </div>
+</aside>

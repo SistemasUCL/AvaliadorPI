@@ -1,0 +1,110 @@
+<div class="m-content">
+  <div class="m-portlet m-portlet--full-height">
+    <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+      (action)="save()">
+      <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+          <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">
+              Grupo
+            </h3>
+          </div>
+        </div>
+        <div class="m-portlet__head-tools">
+          <app-portlet-toolbar [buttons]="toolbarButtons"></app-portlet-toolbar>
+        </div>
+      </div>
+
+      <div class="m-portlet__body">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group m-form__group">
+                  <label for="id">Id</label>
+                  <input type="text" class="form-control m-input" id="id" disabled [(ngModel)]="model.id" name="id">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group m-form__group">
+                  <label for="projeto">Projeto Interdisciplinar</label>
+                  <ng-select name="projeto" [(ngModel)]="model.projetoId" required placeholder="Projeto">
+                    <ng-option *ngFor="let projeto of projetos" [value]="projeto.id">{{projeto.periodo + ' - ' + projeto.tema}}</ng-option>
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group m-form__group">
+                  <label for="nome">Nome</label>
+                  <input type="text" name="nome" class="form-control m-input" id="nome" placeholder="Nome" [(ngModel)]="model.nome" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group m-form__group">
+                  <label for="nomeProjeto">Nome do Projeto</label>
+                  <input type="text" name="nomeProjeto" class="form-control m-input" id="nomeProjeto" placeholder="Nome do Projeto" [(ngModel)]="model.nomeProjeto"
+                    required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group m-form__group">
+              <label for="qrCode">QrCode</label>
+              <a></a>
+              <app-qrcode [qrdata]="model.id" [size]="120"></app-qrcode>
+            </div>
+          </div>
+        </div>
+        <div class="row row-last">
+          <div class="col-md-12">
+            <div class="form-group m-form__group">
+              <label for="descricao">Descrição</label>
+              <textarea name="descricao" class="form-control m-input" id="descricao" placeholder="Descrição" [(ngModel)]="model.descricao"
+                required rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+          <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">
+              Alunos
+            </h3>
+          </div>
+        </div>
+      </div> -->
+    </form>
+    <!-- <div class="row">
+      <div class="col">
+        <app-grid-aluno [grupoId]="model.id"></app-grid-aluno>
+      </div>
+    </div> -->
+
+    <div class="row row-last">
+      <div class="col">
+        <ul class="nav nav-tabs m-tabs-line" role="tablist">
+          <li class="nav-item m-tabs__item">
+            <a class="nav-link m-tabs__link" [class.active]="navOption === 'alunos'" (click)="navOption = 'alunos'" data-toggle="tab"
+              role="tab">Alunos</a>
+          </li>
+          <li class="nav-item m-tabs__item">
+            <a class="nav-link m-tabs__link" [class.active]="navOption === 'avaliacoes'" (click)="navOption = 'avaliacoes'" data-toggle="tab"
+              role="tab">Avaliações</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" [hidden]="navOption != 'alunos'">
+      <app-grid-aluno [grupoId]="model.id"></app-grid-aluno>
+    </div>
+    <div class="tab-content" [hidden]="navOption != 'avaliacoes'">
+      <app-grid-avaliacao-grupo [grupoId]="model.id"></app-grid-avaliacao-grupo>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,43 @@
+//
+//** Default Stylesheets
+//
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+//== 1: Framework Config
+@import "framework-config";
+@import "../theme/sass/framework/config"; // metronic framework config
+@import "../theme/sass/framework/vendors/bootstrap/variables"; // metronic bootstrap override config
+//== 2: Framework Components Config
+@import "../theme/sass/framework/components/base/config";
+@import "../theme/sass/framework/components/general/config";
+//== 3: Bootstrap Include
+@import "../theme/sass/framework/vendors/bootstrap/bootstrap.scss";
+//== 4: Framework Components
+@import "../theme/sass/framework/include";
+//== 5: Snippets
+@import "../theme/sass/snippets/include";
+@import "custom/_timeline-3";
+//== 6: App Config
+@import "app-config";
+@import "base/_config";
+@import "header/_config";
+@import "aside/_config";
+@import "menu-header/_config";
+@import "menu-aside/_config";
+@import "footer/_config";
+//== 7: App Layout
+@import "base/page";
+@import "base/body";
+@import "header/brand";
+@import "header/header";
+@import "header/topbar";
+@import "header/search";
+@import "aside/aside-left";
+@import "aside/aside-right";
+@import "aside/aside-header-menu-mobile";
+@import "menu-header/menu";
+@import "menu-aside/menu";
+@import "subheader/default";
+@import "footer/default";
+@import "extrato/extrato";

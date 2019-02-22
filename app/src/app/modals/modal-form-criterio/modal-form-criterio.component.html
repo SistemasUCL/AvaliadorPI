@@ -1,0 +1,63 @@
+<div *ngIf="active">
+  <form class="m-form m-form--fit m-form--label-align-right" id="form" novalidate #form="ngForm" [appFormValidation]="this.form"
+    (action)="onConfirm()">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">
+        Critério
+      </h4>
+      <button type="button" class="close pull-right" (click)="hideModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control m-input" id="id" disabled [(ngModel)]="model.id" name="id">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" class="form-control m-input" id="titulo" placeholder="Titulo" [(ngModel)]="model.titulo"
+              required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="ordem">Ordem</label>
+            <input type="number" name="ordem" class="form-control m-input" id="ordem" placeholder="Ordem" [(ngModel)]="model.ordem" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group m-form__group">
+            <label for="peso">Peso</label>
+            <input type="number" name="peso" class="form-control m-input" id="peso" placeholder="Peso" [(ngModel)]="model.peso" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group m-form__group">
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" class="form-control m-input" id="descricao" placeholder="Descrição" [(ngModel)]="model.descricao"
+              required rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="text-right">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-check-circle pr-1" aria-hidden="true"></i> Salvar
+        </button>
+        <button type="button" class="btn btn-default m-btn" (click)="onCancel()">
+          <i class="fa fa-times pl-1" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
