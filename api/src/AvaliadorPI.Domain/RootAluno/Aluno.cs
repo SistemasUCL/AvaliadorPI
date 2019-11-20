@@ -13,7 +13,7 @@ namespace AvaliadorPI.Domain.RootAluno
             AssociacaoAlunoGrupo = new List<AssociacaoAlunoGrupo>();
         }
 
-        public string Matricula { get; internal set; }
+        public string Matricula { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 
