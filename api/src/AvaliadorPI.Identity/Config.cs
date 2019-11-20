@@ -25,17 +25,21 @@ namespace AvaliadorPI.Identity
                 RedirectUris = {
                     "http://localhost:4200/callback",
                     "https://localhost:4200/callback",
+                    "https://avaliador-pi-app.azurewebsites.net/callback",
 
                     "http://localhost:4200/silent",
                     "https://localhost:4200/silent",
+                    "https://avaliador-pi-app.azurewebsites.net/silent",
                 },
                 PostLogoutRedirectUris = {
                     "http://localhost:4200/home",
                     "https://localhost:4200/home",
+                    "https://avaliador-pi-app.azurewebsites.net/home",
                 },
                 AllowedCorsOrigins = {
                     "http://localhost:4200",
                     "https://localhost:4200",
+                    "https://avaliador-pi-app.azurewebsites.net",
                 },
 
                 AllowedScopes =
@@ -64,17 +68,23 @@ namespace AvaliadorPI.Identity
                 {
                     "http://localhost:4200/callback",
                     "https://localhost:4200/callback",
+                    "https://avaliador-pi-pwa.azurewebsites.net/callback",
 
                     "http://localhost:4200/silent",
                     "https://localhost:4200/silent",
+                    "https://avaliador-pi-pwa.azurewebsites.net/silent",
                 },
                 PostLogoutRedirectUris =
                 {
-                    "http://localhost:4200/home"
+                    "http://localhost:4200/home",
+                    "https://localhost:4200/home",
+                    "https://avaliador-pi-pwa.azurewebsites.net/home",
                 },
                 AllowedCorsOrigins =
                 {
-                    "http://localhost:4200"
+                    "http://localhost:4200",
+                    "https://localhost:4200",
+                    "https://avaliador-pi-pwa.azurewebsites.net",
                 },
 
                 AllowedScopes =
